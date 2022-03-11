@@ -32,28 +32,56 @@ SVG files used for custom icons may not contain XML markup. For example, we can 
 ### Optional Configuration File
 Your custom icons can be further configured by placing a config.json file within the `coblocks/icons` folder alongside your SVG icons. The configuration file will allow you to specify search keywords, labels, and outline style.
 
+The json key in the `config.json` file should be the same name as the icon (without the `.svg` extension). Eaxmple if you have SVGs with the filenames `apple.svg`,`banana.svg`,`cherry.svg`, and `dragonfruit.svg` the json key that references this icon should be `apple`, `banana`,`cherry`, and `dragonfruit`.
+
+
 Example `config.json` file:
 ```json
 {
-    "adobe-photoshop": {
-        "label": "Adobe Photoshop",
-        "keywords": "adobe photoshop",
-        "icon_outlined": "adobe-photoshop-outlined.svg"
+    "apple": {
+        "label": "Apple",
+        "keywords": "apple fruit"
     },
-    "apple-logo": {
-        "label": "Apple Logo",
-        "keywords": "apple logo",
-        "icon_outlined": "apple-logo-outlined.svg"
+    "banana": {
+        "label": "Banana",
+        "keywords": "banana fruit"
     },
-    "chrome": {
-        "label": "Chrome",
-        "keywords": "chrome web browser",
-        "icon_outlined": "chrome-outlined.svg"
+    "cherry": {
+        "label": "Cherry",
+        "keywords": "cherry fruit"
     },
-    "mac-logo": {
-        "label": "Mac Logo",
-        "keywords": "mac logo computer",
-        "icon_outlined": "mac-logo-outlined.svg"
+    "dragonfruit": {
+        "label": "Dragonfruit",
+        "keywords": "dragonfruit fruit"
+    }
+}
+```
+
+You can also optional add a key `icon_outlined` to the json to specify a specific SVG file to load
+
+
+Example `config.json` file:
+```json
+{
+    "apple": {
+        "label": "Apple",
+        "keywords": "apple fruit",
+        "icon_outlined": "apple.svg"
+    },
+    "banana": {
+        "label": "Banana",
+        "keywords": "banana fruit",
+        "icon_outlined": "banana.svg"
+    },
+    "cherry": {
+        "label": "Cherry",
+        "keywords": "cherry fruit",
+        "icon_outlined": "cherry.svg"
+    },
+    "dragonfruit": {
+        "label": "Dragonfruit",
+        "keywords": "dragonfruit fruit",
+        "icon_outlined": "dragonfruit.svg"
     }
 }
 ```
